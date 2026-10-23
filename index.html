@@ -154,6 +154,13 @@ async function sbDelete(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{metho
 
 async function loadAll(){
   setSS('cargando');
+  const m=document.getElementById('MAIN');
+  // Mostrar error visible si tarda demasiado
+  const warnT=setTimeout(()=>{m.innerHTML=`<p style="padding:20px;color:#c00;font-family:monospace">
+    ⚠️ Timeout conectando con Supabase (5s).<br>
+    URL: ${SB_URL}<br>
+    Abre la consola del navegador (F12) para ver el error exacto.
+  </p>`;},5000);
   try{
     const[per,prj,miem,vac]=await Promise.all([
       sbGet('vac_personas?select=*&order=nombre'),
@@ -161,10 +168,17 @@ async function loadAll(){
       sbGet('vac_miembros?select=*'),
       sbGet('vac_vacaciones?select=*'),
     ]);
+    clearTimeout(warnT);
     DB.personas=per; DB.proyectos=prj; DB.miembros=miem; DB.vacs={};
     for(const v of vac) DB.vacs[`${v.persona_id}|${v.fecha}`]=v.tipo;
     setSS('ok');
-  }catch(e){setSS('err');toast('Error cargando: '+e.message,true);render();}
+  }catch(e){
+    clearTimeout(warnT);
+    setSS('err');
+    m.innerHTML=`<p style="padding:20px;color:#c00;font-family:monospace">Error cargando datos:<br>${e.message}</p>`;
+    toast('Error cargando: '+e.message,true);
+    render();
+  }
 }
 
 async function syncAll(){await loadAll();render();}
