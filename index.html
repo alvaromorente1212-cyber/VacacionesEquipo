@@ -92,6 +92,7 @@ button.delbtn{padding:2px 7px;background:#e55;color:#fff;border:none;border-radi
 <header>
   <h1>Vacaciones OutSystems</h1>
   <span id="ss">cargando…</span>
+  <button class="hbtn" onclick="exportCSV()" style="margin-right:6px">⬇ CSV</button>
   <button class="hbtn" onclick="syncAll()">⟳ Sync</button>
 </header>
 
@@ -182,6 +183,25 @@ async function loadAll(){
 }
 
 async function syncAll(){await loadAll();render();}
+
+function exportCSV(){
+  const TIPOS={V:'Vacaciones',B:'Baja',N:'No disponible',AS:'Asuntos propios'};
+  const per=Object.fromEntries(DB.personas.map(p=>[p.id,p.nombre]));
+  const esc=v=>{v=String(v??'');return /[;"\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+  const rows=Object.entries(DB.vacs).map(([k,t])=>{
+    const[pid,fecha]=k.split('|');
+    const[y,m,d]=fecha.split('-');
+    return[per[pid]||pid,getPersonaProjs(Number(pid)),`${d}/${m}/${y}`,fecha,t,TIPOS[t]||t];
+  }).sort((a,b)=>a[0].localeCompare(b[0])||a[3].localeCompare(b[3]));
+  const lines=[['Persona','Proyectos','Fecha','FechaISO','Código','Tipo'],...rows].map(r=>r.map(esc).join(';'));
+  const blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`vacaciones_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  toast(`Exportados ${rows.length} registros`);
+}
 
 async function saveOneVac(pid,fecha,tipo){
   setSS('guardando');
