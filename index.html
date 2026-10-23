@@ -140,7 +140,13 @@ const p2=n=>String(n).padStart(2,'0');
 const vkey=(pid,m,d,y)=>`${pid}|${(y||S.year)}-${p2(m)}-${p2(d)}`;
 
 // ─── SUPABASE ──────────────────────────────────────────────────────────────
-async function sbGet(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{headers:{...HDR,'Prefer':''}});if(!r.ok)throw new Error(await r.text());return r.json();}
+async function fetchWithTimeout(url,opts,ms=8000){
+  const ctrl=new AbortController();
+  const t=setTimeout(()=>ctrl.abort(),ms);
+  try{const r=await fetch(url,{...opts,signal:ctrl.signal});clearTimeout(t);return r;}
+  catch(e){clearTimeout(t);throw e;}
+}
+async function sbGet(path){const r=await fetchWithTimeout(SB_URL+'/rest/v1/'+path,{headers:{...HDR,'Prefer':''}});if(!r.ok)throw new Error(await r.text());return r.json();}
 async function sbPost(path,body){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'POST',headers:HDR,body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());}
 async function sbPatch(path,body){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'PATCH',headers:{...HDR,'Prefer':'return=minimal'},body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());}
 async function sbDelete(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'DELETE',headers:HDR});if(!r.ok)throw new Error(await r.text());}
@@ -157,7 +163,7 @@ async function loadAll(){
     DB.personas=per; DB.proyectos=prj; DB.miembros=miem; DB.vacs={};
     for(const v of vac) DB.vacs[`${v.persona_id}|${v.fecha}`]=v.tipo;
     setSS('ok');
-  }catch(e){setSS('err');toast('Error cargando: '+e.message,true);}
+  }catch(e){setSS('err');toast('Error cargando: '+e.message,true);render();}
 }
 
 async function syncAll(){await loadAll();render();}
