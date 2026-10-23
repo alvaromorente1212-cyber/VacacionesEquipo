@@ -3,55 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vacaciones Equipo Babel</title>
+<title>Vacaciones Babel 2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,sans-serif;background:#f0f2f5;color:#222;font-size:13px}
-header{background:#1a3a5c;color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-header h1{font-size:15px;font-weight:600;flex:1}
-#ss{font-size:11px;opacity:.8;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.15)}
-#ss.ok{background:rgba(100,255,100,.25)}
-#ss.err{background:rgba(255,80,80,.35)}
-nav{display:flex;gap:2px;background:#eef0f4;padding:8px 12px;border-bottom:1px solid #d8dce4}
-.ntab{padding:5px 14px;border:none;background:#fff;border-radius:5px 5px 0 0;cursor:pointer;font-size:12px;color:#555;border:1px solid #d0d4dc;border-bottom:none}
-.ntab.on{background:#1a3a5c;color:#fff;border-color:#1a3a5c}
-#MAIN{padding:10px}
-/* Calendar */
-.yr-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.yr-row button{padding:4px 10px;border:1px solid #bbb;background:#fff;border-radius:4px;cursor:pointer;font-size:12px}
-.yr-row button.on{background:#1a3a5c;color:#fff;border-color:#1a3a5c}
-.mo-wrap{overflow-x:auto}
-table.cal{border-collapse:collapse;margin-bottom:12px;min-width:100%}
-table.cal th{background:#1a3a5c;color:#fff;padding:3px 5px;font-size:11px;text-align:center;white-space:nowrap}
-table.cal td{border:1px solid #dde;padding:2px 3px;font-size:11px;text-align:center;min-width:28px}
-table.cal td.nm{background:#f8f8fb;color:#aaa}
-table.cal td.wk{background:#f5f5f5;color:#bbb}
-table.cal td.fe{background:#fff3cd;color:#856404}
-table.cal td.V{background:#4CAF50;color:#fff;cursor:pointer}
-table.cal td.B{background:#2196F3;color:#fff;cursor:pointer}
-table.cal td.AS{background:#FF9800;color:#fff;cursor:pointer}
-table.cal td.clickable{cursor:pointer}
-table.cal td.clickable:hover{filter:brightness(.92)}
-.pname{font-weight:600;font-size:11px;white-space:nowrap;text-align:left!important;padding:2px 6px!important;background:#f0f4fa}
-/* Filters */
-.frow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
-.frow select,.frow input[type=text]{padding:5px 8px;border:1px solid #ccc;border-radius:4px;font-size:12px}
-/* Legend */
-.leg{display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap}
-.leg span{display:flex;align-items:center;gap:4px;font-size:11px}
-.leg b{display:inline-block;width:14px;height:14px;border-radius:2px}
-/* Resumen */
-table.res{border-collapse:collapse;width:100%}
-table.res th{background:#1a3a5c;color:#fff;padding:5px 8px;font-size:11px;text-align:left}
-table.res td{border:1px solid #dde;padding:4px 8px;font-size:11px}
-table.res tr:nth-child(even) td{background:#f8f9fb}
-/* Personas / Proyectos tabs */
-.card{background:#fff;border:1px solid #dde;border-radius:6px;padding:10px;margin-bottom:8px}
-.card h3{font-size:13px;margin-bottom:6px;color:#1a3a5c}
-.tag{display:inline-block;background:#e3ecf7;color:#1a3a5c;border-radius:3px;padding:2px 7px;font-size:11px;margin:2px}
-input.newinp{padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:12px;width:180px}
-button.addbtn{padding:4px 10px;background:#1a3a5c;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px}
-button.delbtn{padding:2px 6px;background:#e55;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px;margin-left:4px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f2f5;color:#222;font-size:13px}
+/* HEADER */
+header{background:#111;color:#fff;padding:0 16px;display:flex;align-items:center;height:44px;position:sticky;top:0;z-index:100}
+header h1{font-size:14px;font-weight:600;flex:1}
+.hbtn{background:#222;color:#ccc;border:1px solid #444;border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:5px}
+.hbtn:hover{background:#333}
+#ss{font-size:11px;margin-right:8px;color:#aaa}
+#ss.ok{color:#4CAF50}
+#ss.err{color:#f66}
+/* NAV TABS */
+nav{background:#fff;border-bottom:1px solid #ddd;padding:0 16px;display:flex}
+.ntab{padding:11px 16px;border:none;background:none;cursor:pointer;font-size:13px;color:#555;border-bottom:2px solid transparent;margin-bottom:-1px}
+.ntab:hover{color:#111}
+.ntab.on{color:#111;font-weight:600;border-bottom:2px solid #111}
+/* FILTER BAR */
+.fbar{background:#fff;padding:8px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;border-bottom:1px solid #eee}
+.srch{padding:5px 10px;border:1px solid #ddd;border-radius:20px;font-size:12px;width:150px;outline:none}
+.srch:focus{border-color:#999}
+.chip{padding:4px 12px;border:1px solid #ddd;border-radius:20px;background:#fff;font-size:12px;cursor:pointer;white-space:nowrap}
+.chip.on{background:#111;color:#fff;border-color:#111}
+.chip:hover:not(.on){background:#f5f5f5}
+/* MONTH NAV BAR */
+.mbar{background:#fff;padding:7px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #eee;font-size:12px}
+.marr{background:none;border:1px solid #ddd;width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.marr:hover{background:#f5f5f5}
+.mname{font-weight:600;font-size:13px;min-width:110px}
+.mstats{color:#666;flex:1}
+.mvtoggle{display:flex;gap:2px}
+.mvtoggle button{padding:3px 10px;border:1px solid #ddd;background:#fff;font-size:11px;cursor:pointer}
+.mvtoggle button:first-child{border-radius:4px 0 0 4px}
+.mvtoggle button:last-child{border-radius:0 4px 4px 0}
+.mvtoggle button.on{background:#111;color:#fff;border-color:#111}
+/* YEAR SELECTOR (inside monthly view) */
+.yrsel{display:flex;gap:4px;padding:8px 16px;background:#fff;border-bottom:1px solid #eee}
+.yrbtn{padding:3px 12px;border:1px solid #ddd;background:#fff;border-radius:4px;cursor:pointer;font-size:12px}
+.yrbtn.on{background:#111;color:#fff;border-color:#111}
+/* CALENDAR TABLE */
+#MAIN{overflow-x:auto}
+table.cal{border-collapse:collapse;width:100%;min-width:800px}
+table.cal thead th{background:#fff;padding:4px 3px;font-size:10px;text-align:center;white-space:nowrap;border-bottom:1px solid #ddd;border-right:1px solid #eee;position:sticky;top:0}
+table.cal thead th.dow{font-weight:normal;color:#888}
+table.cal thead th.weekend{color:#ccc}
+table.cal thead th.holiday{color:#e6ac00}
+table.cal thead th.today-hdr{background:#f0f0f0}
+table.cal tbody tr:hover td{background:#fafafa}
+table.cal td{border-right:1px solid #eee;border-bottom:1px solid #f0f0f0;padding:3px 2px;font-size:11px;text-align:center;min-width:24px}
+.col-name{text-align:left!important;padding:4px 10px!important;white-space:nowrap;font-size:12px;min-width:160px;background:#fafafa;position:sticky;left:0;z-index:1}
+.col-prj{text-align:left!important;padding:4px 8px!important;white-space:nowrap;font-size:11px;color:#666;min-width:140px;background:#fafafa;position:sticky;left:160px;z-index:1}
+.col-tot{font-size:11px;font-weight:600;min-width:36px;background:#fafafa}
+td.wk{background:#f9f9f9;color:#ccc}
+td.fe{background:#fffbea;color:#b8920a}
+td.V{background:#d4edda;color:#155724;cursor:pointer;font-weight:600}
+td.B{background:#cce5ff;color:#004085;cursor:pointer;font-weight:600}
+td.N{background:#f8d7da;color:#721c24;cursor:pointer;font-weight:600}
+td.AS{background:#fff3cd;color:#856404;cursor:pointer;font-weight:600}
+td.clickable{cursor:pointer}
+td.clickable:hover{filter:brightness(.93)}
+td.today-col{background:#f5f5f5}
+/* ANUAL TABLE */
+table.anual{border-collapse:collapse;width:100%}
+table.anual th{background:#111;color:#fff;padding:5px 8px;font-size:11px;text-align:center}
+table.anual th:first-child{text-align:left}
+table.anual td{border:1px solid #eee;padding:4px 8px;font-size:11px;text-align:center}
+table.anual td:first-child{text-align:left;font-weight:500}
+table.anual tr:nth-child(even) td{background:#fafafa}
+/* PERSONAS/PROYECTOS */
+.pcard{background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:12px;margin:8px 16px}
+.pcard h3{font-size:13px;margin-bottom:8px;color:#111}
+.tag{display:inline-block;background:#f0f0f0;color:#333;border-radius:12px;padding:2px 10px;font-size:11px;margin:2px}
+input.newinp{padding:5px 10px;border:1px solid #ddd;border-radius:4px;font-size:12px;width:200px}
+button.addbtn{padding:5px 12px;background:#111;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px}
+button.delbtn{padding:2px 7px;background:#e55;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px;margin-left:6px}
+/* LEGEND */
+.legend{padding:8px 16px;display:flex;gap:16px;flex-wrap:wrap;background:#fff;border-top:1px solid #eee;font-size:11px;color:#555}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:2px;border:1px solid rgba(0,0,0,.1)}
+/* TOAST */
 .toast{position:fixed;bottom:20px;right:20px;background:#333;color:#fff;padding:8px 14px;border-radius:6px;font-size:12px;z-index:999;opacity:0;transition:opacity .3s}
 .toast.show{opacity:1}
 </style>
@@ -59,102 +90,85 @@ button.delbtn{padding:2px 6px;background:#e55;color:#fff;border:none;border-radi
 <body>
 
 <header>
-  <h1>📅 Vacaciones — Equipo Babel</h1>
+  <h1>Vacaciones Babel 2026</h1>
   <span id="ss">cargando…</span>
+  <button class="hbtn" onclick="syncAll()">⟳ Sync</button>
 </header>
 
 <nav>
   <button class="ntab" id="T-cal" onclick="go('cal')">Calendario</button>
-  <button class="ntab" id="T-res" onclick="go('res')">Resumen</button>
+  <button class="ntab" id="T-anu" onclick="go('anu')">Anual</button>
   <button class="ntab" id="T-per" onclick="go('per')">Personas</button>
   <button class="ntab" id="T-prj" onclick="go('prj')">Proyectos</button>
 </nav>
 
+<div id="FILTERS"></div>
 <div id="MAIN"><p style="padding:20px;color:#888">Cargando datos…</p></div>
+<div id="LEGEND" class="legend" style="display:none">
+  <span><i style="background:#d4edda"></i>Vacaciones (V)</span>
+  <span><i style="background:#cce5ff"></i>Baja (B)</span>
+  <span><i style="background:#f8d7da"></i>No disponible (N)</span>
+  <span><i style="background:#fffbea"></i>Festivo (Madrid)</span>
+  <span><i style="background:#f9f9f9;border:1px solid #ddd"></i>Fin de semana</span>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── CONFIG ────────────────────────────────────────────────────────────────
-const SB_URL = 'https://xefnuudfxyisaogadnmp.supabase.co';
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlZm51dWRmeHlpc2FvZ2Fkbm1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5MjY2NTQsImV4cCI6MjEwNjUwMjY1NH0.4-VgisftU1TAsI4rz3m-PPb1uLAVszkrENzlGYT3Vfk';
-const HDR = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'};
+const SB_URL='https://xefnuudfxyisaogadnmp.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlZm51dWRmeHlpc2FvZ2Fkbm1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5MjY2NTQsImV4cCI6MjEwNjUwMjY1NH0.4-VgisftU1TAsI4rz3m-PPb1uLAVszkrENzlGYT3Vfk';
+const HDR={'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'};
 
-// ─── STATE ─────────────────────────────────────────────────────────────────
-const _cy = new Date().getFullYear();
-let S = {tab:'cal', year:(_cy>=2026&&_cy<=2030)?_cy:2026, month:new Date().getMonth()+1, filter_prj:0, search:''};
-let DB = {personas:[], proyectos:[], miembros:[], vacs:{}};
+const _now=new Date();
+const _cy=_now.getFullYear();
+let S={tab:'cal',year:(_cy>=2026&&_cy<=2030)?_cy:2026,month:_now.getMonth()+1,filter_prj:0,search:'',view:'mensual'};
+let DB={personas:[],proyectos:[],miembros:[],vacs:{}};
 
-// ─── HOLIDAYS ──────────────────────────────────────────────────────────────
-const FEST_BY_YEAR = {
-  2026: new Set(['01-01','01-06','04-03','05-01','05-15','10-12','11-09','12-07','12-08','12-25']),
-  2027: new Set(['01-01','01-06','03-26','05-01','05-15','10-12','11-01','12-08','12-25']),
-  2028: new Set(['01-01','01-06','04-14','05-01','05-15','10-12','11-01','12-08','12-25']),
-  2029: new Set(['01-01','01-06','04-02','05-01','05-15','10-12','11-01','12-09','12-25']),
-  2030: new Set(['01-01','01-06','04-18','05-01','05-15','10-12','11-01','12-08','12-25']),
+const FEST_BY_YEAR={
+  2026:new Set(['01-01','01-06','04-03','05-01','05-15','10-12','11-09','12-07','12-08','12-25']),
+  2027:new Set(['01-01','01-06','03-26','05-01','05-15','10-12','11-01','12-08','12-25']),
+  2028:new Set(['01-01','01-06','04-14','05-01','05-15','10-12','11-01','12-08','12-25']),
+  2029:new Set(['01-01','01-06','04-02','05-01','05-15','10-12','11-01','12-09','12-25']),
+  2030:new Set(['01-01','01-06','04-18','05-01','05-15','10-12','11-01','12-08','12-25']),
 };
 function getDIM(y){const lp=y%4===0&&(y%100!==0||y%400===0);return[0,31,lp?29:28,31,30,31,30,31,31,30,31,30,31];}
 function getFEST(y){return FEST_BY_YEAR[y]||FEST_BY_YEAR[2026];}
-const MONTHS=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-const CYCLE = {'':'V','V':'B','B':'AS','AS':''};
+const MONTHS=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const MONTHS_S=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+const DOW=['D','L','M','X','J','V','S'];
+const CYCLE={'':'V','V':'B','B':'N','N':'AS','AS':''};
 const p2=n=>String(n).padStart(2,'0');
 const vkey=(pid,m,d,y)=>`${pid}|${(y||S.year)}-${p2(m)}-${p2(d)}`;
 
-// ─── SUPABASE HELPERS ──────────────────────────────────────────────────────
-async function sbGet(path){
-  const r=await fetch(SB_URL+'/rest/v1/'+path,{headers:{...HDR,'Prefer':''}});
-  if(!r.ok)throw new Error(await r.text());
-  return r.json();
-}
-async function sbPost(path,body){
-  const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'POST',headers:HDR,body:JSON.stringify(body)});
-  if(!r.ok)throw new Error(await r.text());
-}
-async function sbPatch(path,body){
-  const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'PATCH',headers:{...HDR,'Prefer':'return=minimal'},body:JSON.stringify(body)});
-  if(!r.ok)throw new Error(await r.text());
-}
-async function sbDelete(path){
-  const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'DELETE',headers:HDR});
-  if(!r.ok)throw new Error(await r.text());
-}
+// ─── SUPABASE ──────────────────────────────────────────────────────────────
+async function sbGet(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{headers:{...HDR,'Prefer':''}});if(!r.ok)throw new Error(await r.text());return r.json();}
+async function sbPost(path,body){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'POST',headers:HDR,body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());}
+async function sbPatch(path,body){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'PATCH',headers:{...HDR,'Prefer':'return=minimal'},body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());}
+async function sbDelete(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'DELETE',headers:HDR});if(!r.ok)throw new Error(await r.text());}
 
-// ─── DATA LOAD ─────────────────────────────────────────────────────────────
 async function loadAll(){
   setSS('cargando');
   try{
-    const [per,prj,miem,vac]=await Promise.all([
+    const[per,prj,miem,vac]=await Promise.all([
       sbGet('vac_personas?select=*&order=nombre'),
       sbGet('vac_proyectos?select=*&order=nombre'),
       sbGet('vac_miembros?select=*'),
       sbGet('vac_vacaciones?select=*'),
     ]);
-    DB.personas=per;
-    DB.proyectos=prj;
-    DB.miembros=miem;
-    DB.vacs={};
-    for(const v of vac){
-      const pid=v.persona_id, fecha=v.fecha, tipo=v.tipo;
-      // fecha = 'YYYY-MM-DD'
-      const [y,mm,dd]=fecha.split('-');
-      DB.vacs[`${pid}|${fecha}`]=tipo;
-    }
+    DB.personas=per; DB.proyectos=prj; DB.miembros=miem; DB.vacs={};
+    for(const v of vac) DB.vacs[`${v.persona_id}|${v.fecha}`]=v.tipo;
     setSS('ok');
   }catch(e){setSS('err');toast('Error cargando: '+e.message,true);}
 }
 
-// ─── SAVE VAC ──────────────────────────────────────────────────────────────
+async function syncAll(){await loadAll();render();}
+
 async function saveOneVac(pid,fecha,tipo){
   setSS('guardando');
   try{
-    // Check if row exists
     const rows=await sbGet(`vac_vacaciones?persona_id=eq.${pid}&fecha=eq.${fecha}&select=id`);
-    if(tipo===''){
-      if(rows.length>0) await sbDelete(`vac_vacaciones?persona_id=eq.${pid}&fecha=eq.${fecha}`);
-    } else if(rows.length===0){
-      await sbPost('vac_vacaciones',{persona_id:pid,fecha,tipo});
-    } else {
-      await sbPatch(`vac_vacaciones?persona_id=eq.${pid}&fecha=eq.${fecha}`,{tipo});
-    }
+    if(tipo===''){if(rows.length>0) await sbDelete(`vac_vacaciones?persona_id=eq.${pid}&fecha=eq.${fecha}`);}
+    else if(rows.length===0){await sbPost('vac_vacaciones',{persona_id:pid,fecha,tipo});}
+    else{await sbPatch(`vac_vacaciones?persona_id=eq.${pid}&fecha=eq.${fecha}`,{tipo});}
     setSS('ok');
   }catch(e){setSS('err');toast('Error al guardar: '+e.message,true);throw e;}
 }
@@ -169,153 +183,202 @@ async function toggleCell(pid,m,d){
   render();
 }
 
-// ─── STATUS ────────────────────────────────────────────────────────────────
 function setSS(st){
-  const el=document.getElementById('ss');
-  if(!el)return;
-  const txt={cargando:'⟳ Cargando',guardando:'↑ Guardando…',ok:'✓ Guardado',err:'✗ Error','':''}[st]||st;
+  const el=document.getElementById('ss');if(!el)return;
+  const txt={cargando:'⟳ Cargando',guardando:'↑ Guardando…',ok:'✓ sincronizado',err:'✗ Error'}[st]||st;
   el.textContent=txt; el.className=st;
 }
 let _toastT=null;
 function toast(msg,err=false){
   const el=document.getElementById('toast');
-  el.textContent=msg; el.className='toast show'+(err?' err':'');
-  clearTimeout(_toastT);
-  _toastT=setTimeout(()=>el.className='toast',3000);
+  el.textContent=msg;el.className='toast show'+(err?' err':'');
+  clearTimeout(_toastT);_toastT=setTimeout(()=>el.className='toast',3000);
 }
 
-// ─── NAV ───────────────────────────────────────────────────────────────────
 function go(tab){S.tab=tab;render();}
+
+function filteredPersonas(){
+  let p=DB.personas;
+  if(S.filter_prj){
+    const mset=new Set(DB.miembros.filter(m=>m.proyecto_id===S.filter_prj).map(m=>m.persona_id));
+    p=p.filter(x=>mset.has(x.id));
+  }
+  if(S.search) p=p.filter(x=>x.nombre.toLowerCase().includes(S.search.toLowerCase()));
+  return p;
+}
+
+function getPersonaProjs(pid){
+  return DB.proyectos.filter(prj=>DB.miembros.some(m=>m.persona_id===pid&&m.proyecto_id===prj.id)).map(prj=>prj.nombre).join(', ')||'—';
+}
+
+function countVacs(pid,year,month){
+  let V=0,B=0,N=0,AS=0;
+  const prefix=`${pid}|${year}-${p2(month)}-`;
+  for(const[k,t] of Object.entries(DB.vacs)){
+    if(k.startsWith(prefix)){if(t==='V')V++;else if(t==='B')B++;else if(t==='N')N++;else if(t==='AS')AS++;}
+  }
+  return{V,B,N,AS};
+}
+
+function countVacsYear(pid,year){
+  let V=0,B=0,N=0,AS=0;
+  const prefix=`${pid}|${year}-`;
+  for(const[k,t] of Object.entries(DB.vacs)){
+    if(k.startsWith(prefix)){if(t==='V')V++;else if(t==='B')B++;else if(t==='N')N++;else if(t==='AS')AS++;}
+  }
+  return{V,B,N,AS};
+}
 
 // ─── RENDER ────────────────────────────────────────────────────────────────
 function render(){
-  ['cal','res','per','prj'].forEach(t=>{
+  ['cal','anu','per','prj'].forEach(t=>{
     const el=document.getElementById('T-'+t);
     if(el) el.className='ntab'+(S.tab===t?' on':'');
   });
+  const isCalAnu=(S.tab==='cal'||S.tab==='anu');
+  document.getElementById('LEGEND').style.display=S.tab==='cal'?'flex':'none';
+  renderFilters();
   const m=document.getElementById('MAIN');
   if(S.tab==='cal') m.innerHTML=rCal();
-  else if(S.tab==='res') m.innerHTML=rRes();
+  else if(S.tab==='anu') m.innerHTML=rAnu();
   else if(S.tab==='per') m.innerHTML=rPer();
   else m.innerHTML=rPrj();
-  // restore focus on search input
-  if(S.search){const srch=m.querySelector('input[type=text]');if(srch){srch.focus();const l=srch.value.length;srch.setSelectionRange(l,l);}}
+  if(S.search){const srch=document.querySelector('.srch');if(srch){srch.focus();const l=srch.value.length;srch.setSelectionRange(l,l);}}
 }
 
-// ─── CALENDAR ──────────────────────────────────────────────────────────────
-function rCal(){
-  const DIM=getDIM(S.year), FEST=getFEST(S.year);
-  let personas=DB.personas;
-  // filter by project
-  if(S.filter_prj){
-    const mset=new Set(DB.miembros.filter(m=>m.proyecto_id===S.filter_prj).map(m=>m.persona_id));
-    personas=personas.filter(p=>mset.has(p.id));
-  }
-  // filter by search
-  if(S.search) personas=personas.filter(p=>p.nombre.toLowerCase().includes(S.search.toLowerCase()));
-
-  const prjOpts=DB.proyectos.map(p=>`<option value="${p.id}"${S.filter_prj===p.id?' selected':''}>${p.nombre}</option>`).join('');
-
-  let html=`
-  <div class="leg">
-    <span><b style="background:#4CAF50"></b>V = Vacaciones</span>
-    <span><b style="background:#2196F3"></b>B = Baja</span>
-    <span><b style="background:#FF9800"></b>AS = Asuntos propios</span>
-    <span><b style="background:#fff3cd;border:1px solid #ccc"></b>Festivo</span>
-  </div>
-  <div class="yr-row">
-    ${[2026,2027,2028,2029,2030].map(y=>`<button class="${S.year===y?'on':''}" onclick="S.year=${y};render()">${y}</button>`).join('')}
-    &nbsp;
-    <select onchange="S.filter_prj=+this.value;render()">
-      <option value="0">— Todos los proyectos —</option>${prjOpts}
-    </select>
-    <input type="text" placeholder="Buscar persona…" value="${S.search||''}" oninput="S.search=this.value;render()" style="width:160px">
+function renderFilters(){
+  const fEl=document.getElementById('FILTERS');
+  if(S.tab!=='cal'&&S.tab!=='anu'){fEl.innerHTML='';return;}
+  // Project chips
+  const chips=DB.proyectos.map(p=>`<button class="chip${S.filter_prj===p.id?' on':''}" onclick="S.filter_prj=${S.filter_prj===p.id?0:p.id};render()">${p.nombre}</button>`).join('');
+  let html=`<div class="fbar">
+    <input class="srch" type="text" placeholder="Buscar persona…" value="${S.search||''}" oninput="S.search=this.value;render()">
+    <button class="chip${S.filter_prj===0?' on':''}" onclick="S.filter_prj=0;render()">Todos</button>
+    ${chips}
   </div>`;
-
-  // months row tabs
-  html+=`<div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap">`;
-  for(let mi=1;mi<=12;mi++){
-    html+=`<button class="${S.month===mi?'on':''} ntab" onclick="S.month=${mi};render()">${MONTHS[mi-1]}</button>`;
+  if(S.tab==='cal'){
+    // Year selector
+    html+=`<div class="yrsel">${[2026,2027,2028,2029,2030].map(y=>`<button class="yrbtn${S.year===y?' on':''}" onclick="S.year=${y};render()">${y}</button>`).join('')}</div>`;
+    // Month nav
+    const personas=filteredPersonas();
+    const cnt=countMonthStats(personas,S.year,S.month);
+    const prevM=S.month===1?12:S.month-1;
+    const nextM=S.month===12?1:S.month+1;
+    const prevY=S.month===1?S.year-1:S.year;
+    const nextY=S.month===12?S.year+1:S.year;
+    html+=`<div class="mbar">
+      <button class="marr" onclick="S.month=${prevM};if(${prevY!==S.year})S.year=${prevY};render()">&#8249;</button>
+      <span class="mname">${MONTHS[S.month-1]} ${S.year}</span>
+      <button class="marr" onclick="S.month=${nextM};if(${nextY!==S.year})S.year=${nextY};render()">&#8250;</button>
+      <span class="mstats">${personas.length} personas &nbsp;·&nbsp; ${MONTHS_S[S.month-1]}: ${cnt.V}vac ${cnt.B}baja</span>
+      <div class="mvtoggle">
+        <button class="${S.view==='mensual'?'on':''}" onclick="S.view='mensual';render()">Mensual</button>
+        <button class="${S.view==='anual'?'on':''}" onclick="S.tab='anu';render()">Anual</button>
+      </div>
+    </div>`;
   }
-  html+=`</div>`;
+  fEl.innerHTML=html;
+}
 
-  // table for selected month
-  const mi=S.month;
-  const days=DIM[mi];
-  // header: day numbers + day of week
-  const DOW=['D','L','M','X','J','V','S'];
-  html+=`<div class="mo-wrap"><table class="cal"><thead><tr>`;
-  html+=`<th>${MONTHS[mi-1]} ${S.year}</th>`;
+function countMonthStats(personas,year,month){
+  let V=0,B=0;
+  for(const p of personas){const c=countVacs(p.id,year,month);V+=c.V;B+=c.B;}
+  return{V,B};
+}
+
+// ─── CALENDARIO MENSUAL ────────────────────────────────────────────────────
+function rCal(){
+  const DIM=getDIM(S.year),FEST=getFEST(S.year);
+  const personas=filteredPersonas();
+  const mi=S.month,days=DIM[mi];
+  const todayY=_now.getFullYear(),todayM=_now.getMonth()+1,todayD=_now.getDate();
+
+  let html=`<table class="cal"><thead><tr>`;
+  html+=`<th class="col-name" style="text-align:left">Persona</th>`;
+  html+=`<th class="col-prj" style="text-align:left">Proyectos</th>`;
   for(let d=1;d<=days;d++){
     const dow=new Date(S.year,mi-1,d).getDay();
     const fe=FEST.has(`${p2(mi)}-${p2(d)}`);
-    const cls=fe?' class="fe"':(dow===0||dow===6?' class="wk"':'');
-    html+=`<th${cls}>${d}<br><span style="font-weight:normal;font-size:9px">${DOW[dow]}</span></th>`;
+    const isWk=(dow===0||dow===6);
+    const isToday=(S.year===todayY&&mi===todayM&&d===todayD);
+    let cls=fe?'holiday':isWk?'weekend dow':'dow';
+    if(isToday) cls+=' today-hdr';
+    html+=`<th class="${cls}">${DOW[dow]}</th>`;
   }
-  html+=`</tr></thead><tbody>`;
+  html+=`<th>Mes</th><th>Año</th></tr>`;
+  // Day numbers row
+  html+=`<tr>`;
+  html+=`<th class="col-name" style="background:#f0f0f0"></th>`;
+  html+=`<th class="col-prj" style="background:#f0f0f0"></th>`;
+  for(let d=1;d<=days;d++){
+    const dow=new Date(S.year,mi-1,d).getDay();
+    const fe=FEST.has(`${p2(mi)}-${p2(d)}`);
+    const isWk=(dow===0||dow===6);
+    const isToday=(S.year===todayY&&mi===todayM&&d===todayD);
+    let cls=fe?'holiday':isWk?'weekend':'';
+    if(isToday) cls+=(cls?' ':')+'today-hdr';
+    html+=`<th class="${cls}" style="font-weight:${isToday?700:400}">${d}</th>`;
+  }
+  html+=`<th></th><th></th></tr></thead><tbody>`;
 
-  for(const p of personas){
-    html+=`<tr><td class="pname">${p.nombre}</td>`;
+  for(const per of personas){
+    const mosv=countVacs(per.id,S.year,mi);
+    const yrv=countVacsYear(per.id,S.year);
+    const mosLabel=[mosv.V?mosv.V+'V':'',mosv.B?mosv.B+'B':'',mosv.N?mosv.N+'N':''].filter(Boolean).join(' ')||'';
+    const yrLabel=[yrv.V?yrv.V+'V':'',yrv.B?yrv.B+'B':''].filter(Boolean).join(' ')||'';
+    html+=`<tr>`;
+    html+=`<td class="col-name">${per.nombre}</td>`;
+    html+=`<td class="col-prj">${getPersonaProjs(per.id)}</td>`;
     for(let d=1;d<=days;d++){
       const dow=new Date(S.year,mi-1,d).getDay();
       const fe=FEST.has(`${p2(mi)}-${p2(d)}`);
-      const k=vkey(p.id,mi,d);
-      const tipo=DB.vacs[k]||'';
       const isWk=(dow===0||dow===6);
-      let cls=fe?'fe':(isWk?'wk':'');
-      if(tipo) cls=tipo;
-      const click=(fe||isWk)?'':` onclick="toggleCell(${p.id},${mi},${d})" class="${cls||''} clickable"`;
-      const klass=click?'':` class="${cls}"`;
-      html+=`<td${click||klass}>${tipo||''}</td>`;
+      const isToday=(S.year===todayY&&mi===todayM&&d===todayD);
+      const k=vkey(per.id,mi,d);
+      const tipo=DB.vacs[k]||'';
+      if(fe){html+=`<td class="fe">${tipo||''}</td>`;}
+      else if(isWk){html+=`<td class="wk"></td>`;}
+      else{
+        const cls=tipo||'';
+        const todayCls=isToday?' today-col':'';
+        html+=`<td class="${cls}${todayCls} clickable" onclick="toggleCell(${per.id},${mi},${d})">${tipo||''}</td>`;
+      }
     }
+    html+=`<td class="col-tot" style="color:#555">${mosLabel}</td>`;
+    html+=`<td class="col-tot" style="color:#333">${yrLabel}</td>`;
     html+=`</tr>`;
   }
-  html+=`</tbody></table></div>`;
-  if(personas.length===0) html+=`<p style="color:#888;padding:10px">Sin resultados.</p>`;
+  html+=`</tbody></table>`;
+  if(personas.length===0) html+=`<p style="color:#888;padding:16px">Sin resultados.</p>`;
   return html;
 }
 
-// ─── RESUMEN ───────────────────────────────────────────────────────────────
-function rRes(){
-  let personas=DB.personas;
-  if(S.filter_prj){
-    const mset=new Set(DB.miembros.filter(m=>m.proyecto_id===S.filter_prj).map(m=>m.persona_id));
-    personas=personas.filter(p=>mset.has(p.id));
-  }
-  if(S.search) personas=personas.filter(p=>p.nombre.toLowerCase().includes(S.search.toLowerCase()));
-  const prjOpts=DB.proyectos.map(p=>`<option value="${p.id}"${S.filter_prj===p.id?' selected':''}>${p.nombre}</option>`).join('');
-
-  let html=`<div class="frow">
-    <select onchange="S.filter_prj=+this.value;render()">
-      <option value="0">— Todos los proyectos —</option>${prjOpts}
-    </select>
-    <input type="text" placeholder="Buscar…" value="${S.search||''}" oninput="S.search=this.value;render()">
-  </div>
-  <table class="res"><thead><tr>
-    <th>Persona</th><th>V</th><th>B</th><th>AS</th><th>Total</th>
-    ${DB.proyectos.map(p=>`<th>${p.nombre}</th>`).join('')}
-  </tr></thead><tbody>`;
-
-  for(const p of personas){
-    let V=0,B=0,AS=0;
-    for(const[k,t]of Object.entries(DB.vacs)){
-      if(k.startsWith(`${p.id}|${S.year}-`)){
-        if(t==='V')V++; else if(t==='B')B++; else if(t==='AS')AS++;
-      }
+// ─── ANUAL ─────────────────────────────────────────────────────────────────
+function rAnu(){
+  const personas=filteredPersonas();
+  let html=`<div style="padding:12px 16px">`;
+  // Year selector
+  html+=`<div style="display:flex;gap:6px;margin-bottom:12px">${[2026,2027,2028,2029,2030].map(y=>`<button class="yrbtn${S.year===y?' on':''}" onclick="S.year=${y};render()">${y}</button>`).join('')}</div>`;
+  html+=`<table class="anual"><thead><tr><th>Persona</th><th>Proyectos</th>`;
+  for(const ms of MONTHS_S) html+=`<th>${ms}</th>`;
+  html+=`<th>V Total</th><th>B Total</th></tr></thead><tbody>`;
+  for(const per of personas){
+    const yr=countVacsYear(per.id,S.year);
+    html+=`<tr><td>${per.nombre}</td><td style="color:#666;font-size:11px">${getPersonaProjs(per.id)}</td>`;
+    for(let mi=1;mi<=12;mi++){
+      const c=countVacs(per.id,S.year,mi);
+      const lbl=c.V?c.V+'V':c.B?c.B+'B':c.N?c.N+'N':'';
+      html+=`<td>${lbl}</td>`;
     }
-    const proyNames=DB.proyectos.map(prj=>{
-      const is=DB.miembros.some(m=>m.persona_id===p.id&&m.proyecto_id===prj.id);
-      return`<td>${is?'✓':''}</td>`;
-    }).join('');
-    html+=`<tr><td>${p.nombre}</td><td>${V}</td><td>${B}</td><td>${AS}</td><td>${V+B+AS}</td>${proyNames}</tr>`;
+    html+=`<td><b>${yr.V}</b></td><td><b>${yr.B}</b></td></tr>`;
   }
-  html+=`</tbody></table>`;
+  html+=`</tbody></table></div>`;
   return html;
 }
 
 // ─── PERSONAS ──────────────────────────────────────────────────────────────
 function rPer(){
-  let html=`<div class="card">
+  let html=`<div class="pcard">
     <h3>Añadir persona</h3>
     <input class="newinp" id="np-name" placeholder="Nombre completo">
     <button class="addbtn" onclick="addPersona()">Añadir</button>
@@ -323,7 +386,7 @@ function rPer(){
   for(const p of DB.personas){
     const proys=DB.proyectos.filter(prj=>DB.miembros.some(m=>m.persona_id===p.id&&m.proyecto_id===prj.id));
     const unproys=DB.proyectos.filter(prj=>!DB.miembros.some(m=>m.persona_id===p.id&&m.proyecto_id===prj.id));
-    html+=`<div class="card">
+    html+=`<div class="pcard">
       <h3>${p.nombre} <button class="delbtn" onclick="delPersona(${p.id},'${p.nombre.replace(/'/g,"\\'")}')">✕</button></h3>
       <div>Proyectos: ${proys.map(pr=>`<span class="tag">${pr.nombre} <a href="#" onclick="delMiembro(${p.id},${pr.id});return false" style="color:#c00">✕</a></span>`).join('')}
       ${unproys.map(pr=>`<button class="addbtn" style="font-size:10px;padding:2px 7px;margin:2px" onclick="addMiembro(${p.id},${pr.id})">+ ${pr.nombre}</button>`).join('')}
@@ -334,15 +397,12 @@ function rPer(){
 }
 
 async function addPersona(){
-  const nm=document.getElementById('np-name').value.trim();
-  if(!nm)return;
+  const nm=document.getElementById('np-name').value.trim();if(!nm)return;
   try{
     const r=await fetch(SB_URL+'/rest/v1/vac_personas',{method:'POST',headers:{...HDR,'Prefer':'return=representation'},body:JSON.stringify({nombre:nm})});
     if(!r.ok)throw new Error(await r.text());
     const data=await r.json();
-    DB.personas.push(data[0]);
-    DB.personas.sort((a,b)=>a.nombre.localeCompare(b.nombre));
-    render();
+    DB.personas.push(data[0]);DB.personas.sort((a,b)=>a.nombre.localeCompare(b.nombre));render();
   }catch(e){toast('Error: '+e.message,true);}
 }
 
@@ -354,7 +414,6 @@ async function delPersona(id,nombre){
     await sbDelete(`vac_personas?id=eq.${id}`);
     DB.personas=DB.personas.filter(p=>p.id!==id);
     DB.miembros=DB.miembros.filter(m=>m.persona_id!==id);
-    // remove from vacs cache
     for(const k of Object.keys(DB.vacs)) if(k.startsWith(`${id}|`)) delete DB.vacs[k];
     render();
   }catch(e){toast('Error: '+e.message,true);}
@@ -364,30 +423,27 @@ async function addMiembro(pid,prid){
   try{
     const r=await fetch(SB_URL+'/rest/v1/vac_miembros',{method:'POST',headers:{...HDR,'Prefer':'return=representation'},body:JSON.stringify({persona_id:pid,proyecto_id:prid})});
     if(!r.ok)throw new Error(await r.text());
-    const data=await r.json();
-    DB.miembros.push(data[0]);
-    render();
+    const data=await r.json();DB.miembros.push(data[0]);render();
   }catch(e){toast('Error: '+e.message,true);}
 }
 
 async function delMiembro(pid,prid){
   try{
     await sbDelete(`vac_miembros?persona_id=eq.${pid}&proyecto_id=eq.${prid}`);
-    DB.miembros=DB.miembros.filter(m=>!(m.persona_id===pid&&m.proyecto_id===prid));
-    render();
+    DB.miembros=DB.miembros.filter(m=>!(m.persona_id===pid&&m.proyecto_id===prid));render();
   }catch(e){toast('Error: '+e.message,true);}
 }
 
 // ─── PROYECTOS ─────────────────────────────────────────────────────────────
 function rPrj(){
-  let html=`<div class="card">
+  let html=`<div class="pcard">
     <h3>Añadir proyecto</h3>
     <input class="newinp" id="np-prj" placeholder="Nombre del proyecto">
     <button class="addbtn" onclick="addProyecto()">Añadir</button>
   </div>`;
   for(const prj of DB.proyectos){
     const miems=DB.personas.filter(p=>DB.miembros.some(m=>m.persona_id===p.id&&m.proyecto_id===prj.id));
-    html+=`<div class="card">
+    html+=`<div class="pcard">
       <h3>${prj.nombre} <button class="delbtn" onclick="delProyecto(${prj.id},'${prj.nombre}')">✕</button></h3>
       <div>Miembros: ${miems.map(p=>`<span class="tag">${p.nombre}</span>`).join('')||'<em style="color:#aaa">ninguno</em>'}</div>
     </div>`;
@@ -396,14 +452,11 @@ function rPrj(){
 }
 
 async function addProyecto(){
-  const nm=document.getElementById('np-prj').value.trim();
-  if(!nm)return;
+  const nm=document.getElementById('np-prj').value.trim();if(!nm)return;
   try{
     const r=await fetch(SB_URL+'/rest/v1/vac_proyectos',{method:'POST',headers:{...HDR,'Prefer':'return=representation'},body:JSON.stringify({nombre:nm})});
     if(!r.ok)throw new Error(await r.text());
-    const data=await r.json();
-    DB.proyectos.push(data[0]);
-    render();
+    const data=await r.json();DB.proyectos.push(data[0]);render();
   }catch(e){toast('Error: '+e.message,true);}
 }
 
@@ -413,16 +466,12 @@ async function delProyecto(id,nombre){
     await sbDelete(`vac_miembros?proyecto_id=eq.${id}`);
     await sbDelete(`vac_proyectos?id=eq.${id}`);
     DB.proyectos=DB.proyectos.filter(p=>p.id!==id);
-    DB.miembros=DB.miembros.filter(m=>m.proyecto_id!==id);
-    render();
+    DB.miembros=DB.miembros.filter(m=>m.proyecto_id!==id);render();
   }catch(e){toast('Error: '+e.message,true);}
 }
 
 // ─── INIT ──────────────────────────────────────────────────────────────────
-(async()=>{
-  await loadAll();
-  render();
-})();
+(async()=>{await loadAll();render();})();
 </script>
 </body>
 </html>
