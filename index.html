@@ -337,7 +337,7 @@ function rCal(){
     const isWk=(dow===0||dow===6);
     const isToday=(S.year===todayY&&mi===todayM&&d===todayD);
     let cls=fe?'holiday':isWk?'weekend':'';
-    if(isToday) cls+=(cls?' ':')+'today-hdr';
+    if(isToday) cls+=(cls?' ':'')+'today-hdr';
     html+=`<th class="${cls}" style="font-weight:${isToday?700:400}">${d}</th>`;
   }
   html+=`<th></th><th></th></tr></thead><tbody>`;
