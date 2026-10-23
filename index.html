@@ -117,6 +117,7 @@ button.delbtn{padding:2px 7px;background:#e55;color:#fff;border:none;border-radi
 const SB_URL='https://xefnuudfxyisaogadnmp.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlZm51dWRmeHlpc2FvZ2Fkbm1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5MjY2NTQsImV4cCI6MjEwNjUwMjY1NH0.4-VgisftU1TAsI4rz3m-PPb1uLAVszkrENzlGYT3Vfk';
 const HDR={'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'};
+const HDR_GET={'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY};
 
 const _now=new Date();
 const _cy=_now.getFullYear();
@@ -146,7 +147,7 @@ async function fetchWithTimeout(url,opts,ms=8000){
   try{const r=await fetch(url,{...opts,signal:ctrl.signal});clearTimeout(t);return r;}
   catch(e){clearTimeout(t);throw e;}
 }
-async function sbGet(path){const r=await fetchWithTimeout(SB_URL+'/rest/v1/'+path,{headers:{...HDR,'Prefer':''}});if(!r.ok)throw new Error(await r.text());return r.json();}
+async function sbGet(path){const r=await fetchWithTimeout(SB_URL+'/rest/v1/'+path,{headers:HDR_GET});if(!r.ok)throw new Error(await r.text());return r.json();}
 async function sbPost(path,body){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'POST',headers:HDR,body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());}
 async function sbPatch(path,body){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'PATCH',headers:{...HDR,'Prefer':'return=minimal'},body:JSON.stringify(body)});if(!r.ok)throw new Error(await r.text());}
 async function sbDelete(path){const r=await fetch(SB_URL+'/rest/v1/'+path,{method:'DELETE',headers:HDR});if(!r.ok)throw new Error(await r.text());}
@@ -477,7 +478,13 @@ async function delProyecto(id,nombre){
 }
 
 // ─── INIT ──────────────────────────────────────────────────────────────────
-(async()=>{await loadAll();render();})();
+(async()=>{
+  await loadAll();
+  try{render();}
+  catch(e){
+    document.getElementById('MAIN').innerHTML=`<p style="color:red;padding:20px;font-family:monospace">Error al renderizar: ${e.message}<br><pre>${e.stack}</pre></p>`;
+  }
+})();
 </script>
 </body>
 </html>
